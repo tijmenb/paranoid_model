@@ -1,24 +1,29 @@
 # ParanoidModel
 
-TODO: Write a gem description
+Will block you from deleting an ActiveRecord model by calling `model.delete`, `model.destroy` `Class.delete_all` and `Class.destroy_all`.
+
+Also disables `Class.update_all` and `model.update_attribute`, because they have no validations.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'paranoid_model'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install paranoid_model
+```ruby
+    gem 'paranoid_model', github: 'tijmenb/paranoid_model'
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class SomeSensitiveModel < ActiveRecord::Base
+    include ParanoidModel
+end
+```
+
+```console
+> SomeSensitiveModel.destroy_all
+ParanoidModel::ParanoidModelException: :destroy_all is verboten for this model.
+```
 
 ## Contributing
 
