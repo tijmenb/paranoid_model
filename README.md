@@ -1,5 +1,7 @@
 # ParanoidModel
 
+[![Build Status](https://travis-ci.org/tijmenb/paranoid_model.png?branch=master)](https://travis-ci.org/tijmenb/paranoid_model)
+
 Will block you from deleting an ActiveRecord model by calling `model.delete`, `model.destroy` `Class.delete_all` and `Class.destroy_all`.
 
 Also disables `Class.update_all` and `model.update_attribute`, because they have no validations.
@@ -9,7 +11,7 @@ Also disables `Class.update_all` and `model.update_attribute`, because they have
 Add this line to your application's Gemfile:
 
 ```ruby
-    gem 'paranoid_model', github: 'tijmenb/paranoid_model'
+    gem 'paranoid_model'
 ```
 
 ## Usage
